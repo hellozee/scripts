@@ -5,3 +5,4 @@ sudo mount --rbind /sys /mnt/os/sys
 sudo mount --make-rslave /mnt/os/sys 
 sudo mount --rbind /dev /mnt/os/dev 
 sudo mount --make-rslave /mnt/os/dev
+sudo chroot /mnt/os
