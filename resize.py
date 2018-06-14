@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import os
+import os, random, string
 from os import listdir
 from os.path import isfile, join
 from PIL import Image
@@ -40,6 +40,6 @@ for imagefile in fileList:
 		number = '0' + str(i)
 	else :
 		number = str(i)
-
-	resizedIm.save('resized/frame' + number + '.jpg') 
+	randString = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits + string.ascii_lowercase) for _ in range(10))
+	resizedIm.save('resized/'+ randString + 'frame.jpg') 
 	i = i + 1
