@@ -28,18 +28,9 @@ try:
 except:
 	os.mkdir('resized')
 
-i = 0
-
 for imagefile in fileList:
 	im = Image.open(imagefile)
 	resizedIm = cropTo16to9(im)
 	resizedIm = resizedIm.resize((1920,1080))
-
-	number = ''
-	if i < 10:
-		number = '0' + str(i)
-	else :
-		number = str(i)
 	randString = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits + string.ascii_lowercase) for _ in range(10))
 	resizedIm.save('resized/'+ randString + 'frame.jpg') 
-	i = i + 1
